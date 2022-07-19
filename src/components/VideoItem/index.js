@@ -1,12 +1,18 @@
 import React from 'react';
 import './index.css';
 
-const VideoItem = () => {
+const VideoItem = ({item}) => {
  
   
     return (
-        <li>
-          
+        <li className='videoItem videoItemGrid'>
+          <img src={item.thumbnails.medium.url} alt='비디오썸네일' className='thumbnail-img' />
+          <div className='descriptionBox'>
+            <div className='description'>
+                  <h2 className='videoTitle'>{item.title}</h2>
+                  <h3 className='channelTitle'>{item.channelTitle}</h3>
+            </div>
+          </div>
         </li>
     );
 };

@@ -6,7 +6,7 @@ export const getVideoList = createAsyncThunk(
     async (url) => {
         try{
             const res = await axios.get(url)
-            return res.data
+            return res.data.items
         }catch(err){
             console.log(err)
         }
