@@ -5,9 +5,9 @@ const VideoView  = ({id}) => {
         <div className='playVideoBox'>
             <div className='iframeBox'>
                 <iframe 
-                src={`https://www.youtube.com/embed/${id}`}
+                src={`https://www.youtube-nocookie.com/embed/${id}`}
                 title='youtube video'
-                allowfullscreen>
+                allowFullScreen>
                 </iframe>
             </div>
             <div className='descriptionContainer'>
