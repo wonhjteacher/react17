@@ -33,4 +33,5 @@ const videoSlice =  createSlice({
     }
 })
 
+export const { videoListLayout } = videoSlice.actions
 export default videoSlice.reducer
