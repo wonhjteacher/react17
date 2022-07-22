@@ -6,12 +6,12 @@ import VideoItem from '../components/VideoItem';
 const Watch = () => {
     const [query,setQuery]  = useSearchParams();
     const id=query.get('id')
-    const videoData = useSelector((state) => state.video.data);
-    const lt10VideoData = videoData.filter((item,idx)=>idx<10)
+    const {data} = useSelector((state) => state.video);
+    const lt10VideoData = data.filter((item,idx)=>idx<10)
     return (
         <section className='list content'>
             <VideoView id={id} />
-            <ul className='watchList'>
+            <ul className='watchList VideoRowList'>
             { 
                 lt10VideoData.map((item,idx)=>(
                     <VideoItem 
