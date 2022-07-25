@@ -45,22 +45,28 @@
 
 .VideoRowList .videoItemGrid{
     flex:1 1 50%; 
-    max-width: 50%;
     display: flex;
     flex-direction: row;
     background-color: var(--color-dark-gray);
     background-clip: content-box;
 }
+.watchList .VideoRowList .videoItemGrid{
+    flex:1 1 35%; 
+}
 
-.VideoRowList .thumbnail-img{
-    flex: 1 1 30%;
+.VideoRowList .thumbnail-img-box{
+    max-width: 215px;
+    flex: 1 1 215px;
+}
+
+.VideoRowList .thumbnail-img-box .thumbnail-img{
+    width: 200px;
     margin-top:0.7rem;
     margin-left:0.7rem;
 }
 
 .VideoRowList .descriptionBox{
     padding:0.2rem;
-    flex: 1 1 70%;
     color: var(--color-light-gray);
     margin-top:0.7rem;
     margin-left:0.3rem;
@@ -75,7 +81,6 @@
 .watchList .videoItemGrid{
     display: flex;
     max-width: 100%;
-    flex: 1 1 100%;
 }
 
 .watchList .videoItemGrid .videoTitle{width: 50%;}

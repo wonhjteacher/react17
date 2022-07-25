@@ -1,11 +1,23 @@
 import axios from 'axios';
-import { createSlice ,createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice ,createAsyncThunk } from '@reduxjs/toolkit';
 
 export const getVideoList = createAsyncThunk(
     "GET_VIDEO_LIST",
     async (url) => {
         try{
-            const res = await axios.get(url)
+            const res = await axios.get(url);
+            return res.data.items
+        }catch(err){
+            console.log(err)
+        }
+    }
+)
+
+export const getChannelInfo = createAsyncThunk(
+    "GET_CHANNEL_INFO",
+    async (url) => {
+        try{
+            const res = await axios.get(url);
             return res.data.items
         }catch(err){
             console.log(err)
@@ -14,12 +26,15 @@ export const getVideoList = createAsyncThunk(
 )
 
 
+
+
 const videoSlice =  createSlice({
     name:'video',
     initialState:{
         data:[],
         listLayout:'grid',
         loading:true,
+        channel:'',
     },
     reducers: {  
         videoListLayout:(state,action) => {
@@ -36,6 +51,10 @@ const videoSlice =  createSlice({
         })
         builder.addCase(getVideoList.rejected,(state,action)=>{
             state.loading=true;
+        })
+        builder.addCase(getChannelInfo.fulfilled,(state,action)=>{
+            console.log('비디오채널 정보',action.payload)
+            state.channel=action.payload;
         })
     }
 })

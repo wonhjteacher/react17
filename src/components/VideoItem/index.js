@@ -13,12 +13,14 @@ const VideoItem = ({item,value}) => {
     //value items 
     const navigate=useNavigate();
     const goToWatch = () => {
-    navigate(`/watch?id=${id}`)
+      navigate(`/watch?id=${id}&channelId=${item.channelId}`)
    }
 
     return (
         <li className='videoItem videoItemGrid' onClick={goToWatch}>
-          <img src={item.thumbnails.medium.url} alt='비디오썸네일' className='thumbnail-img' />
+          <div className='thumbnail-img-box'>
+            <img src={item.thumbnails.medium.url} alt='비디오썸네일' className='thumbnail-img' />
+          </div>
           <div className='descriptionBox'>
             <div className='description'>
                   <h2 className='videoTitle'>{item.title}</h2>

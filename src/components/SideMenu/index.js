@@ -1,6 +1,11 @@
 import React from 'react';
 import './index.css';
-const SideMenu = () => {
+/* 
+import React, { memo } from 'react'; 
+const SideMenu =memo (() => {
+*/
+
+const SideMenu =React.memo(() => {
     return (
         <div className='sideMenu'>
             <button className='sideBtn'>
@@ -25,6 +30,6 @@ const SideMenu = () => {
             </button>
         </div>
     );
-};
+});
 
 export default SideMenu;

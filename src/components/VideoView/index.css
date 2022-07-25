@@ -5,6 +5,7 @@
 .iframeBox{
     margin-bottom: 1rem;
     width: 100%;
+    min-width: 840px;
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
 }
